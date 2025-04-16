@@ -25,17 +25,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollY = window.scrollY;
 
     // For each problem image (except the first one which is always 100%)
-    // problemImages.forEach((img, index) => {
-    //   if (index > 0) {
-    //     // Skip the first image
-    //     const rect = img.getBoundingClientRect();
-    //     const visiblePercentage = getVisiblePercentage(img);
+    problemImages.forEach((img, index) => {
+      if (index > 0) {
+        // Skip the first image
+        const rect = img.getBoundingClientRect();
+        const visiblePercentage = getVisiblePercentage(img);
 
-    //     // Scale from 80% to 100% based on visibility
-    //     const scaleFactor = 0.8 + visiblePercentage * 0.2;
-    //     img.style.width = `${scaleFactor * 100}%`;
-    //   }
-    // });
+        // Scale from 80% to 100% based on visibility
+        // const scaleFactor = 0.8 + visiblePercentage * 0.2;
+        // img.style.width = `${scaleFactor * 100}%`;
+      }
+    });
 
     // Animate elements as they enter viewport (excluding hero section)
     animateElements.forEach((element) => {
