@@ -1,0 +1,638 @@
+/* General Styles */
+body {
+  margin: 0;
+  background: rgb(5, 5, 5);
+  font-family: "Inter", sans-serif;
+  color: white;
+
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+.logo {
+  font-size: 18px;
+  margin-left: 50px; /* Ensures the logo is aligned with the left edge */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Ensures the logo is on the left and links are on the right */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  background: #262626;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  transition: background 0.3s ease-in-out;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* Navbar container */
+.navbar-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px; /* Ensures consistent spacing on both sides */
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  margin-right: 50px; /* Ensures the links are aligned with the right edge */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(118, 118, 118);
+  font-size: 0.96rem;
+}
+
+.nav-links a {
+  color: #ffffff99;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  text-align: center;
+  padding: 150px 50px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 40px; /* Moves it down */
+  left: 10px;
+  right: 10px;
+  /* Keeps the full width */
+  height: 530px; /* Adjust the height to be smaller */
+  background: url("assets/Comp1_1-ezgif.com-video-to-gif-converter.gif")
+    no-repeat center/cover;
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.hero-section h1 {
+  position: absolute;
+  top: 250px; /* Move down */
+  left: 32px; /* Move right */
+  font-family: "Almaria", sans-serif; /* Set the font */
+  color: #0e0e0e;
+  font-size: 43px;
+  text-align: left;
+  line-height: 132%;
+}
+@font-face {
+  font-family: "Almaria";
+  src: url("assets/Almarai-Light.ttf") format("truetype");
+}
+
+.hero-info {
+  display: flex;
+  position: absolute;
+  top: 530px; /* Move down */
+  left: 32px; /* Move right */
+  justify-content: center;
+  gap: 283px;
+  color: #292929;
+  font-family: "Inter", sans-serif;
+  font-weight: 600; /* Bold */
+  line-height: 123%;
+}
+
+/* Toggle Section */
+.toggle-container {
+  width: 100%; /* Full width to match the gradient above */
+  max-width: 1440px; /* Ensures it doesn't exceed a specific max width */
+  height: 33px; /* Increased height for better alignment */
+  background: #292929;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: -70px auto;
+  margin-top: -120px;
+  padding: 5px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle-btn {
+  flex: 1;
+  text-align: center;
+  padding: 12px 15px; /* Adjusted padding for better vertical alignment */
+  border-radius: 46px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out; /* Smoother transition */
+  color: #6e6e6e;
+}
+
+/* Active Toggle Button */
+.toggle-btn.active {
+  background: #090909;
+  color: white;
+  width: 50%; /* Takes 50% of the container for better centering */
+  height: 29px; /* Adjusted height to be more proportional */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Ensures it's centered horizontally */
+  text-align: center;
+  border-radius: 50px; /* Makes it consistent with the container */
+  padding: 5px 20px; /* Adjusted padding for better visual balance */
+  transition: all 0.5s; /* Smoother transition */
+}
+/* Slight shift when active */
+.toggle-btn:first-child.active {
+  transform: translateX(-3px); /* Shift left when first button is active */
+}
+
+.toggle-btn:last-child.active {
+  transform: translateX(3px); /* Shift right when second button is active */
+}
+.toggle-btn:not(.active):hover {
+  color: #e0e0e0; /* Brighter text */
+  background: rgba(255, 255, 255, 0.1); /* Slightly lighter background */
+}
+
+/* Modified case-studies container */
+#portfolio-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  gap: 4rem;
+  width: 100%;
+  padding: 0;
+  margin-top: 100px; /* Move it up */
+  margin-bottom: -880px; /* Add negative margin to pull footer up */
+  transform: scale(0.63); /* Keep scaling but remove translateY */
+  transform-origin: center top; /* Set transform origin to center top */
+}
+
+/* Case Study Cards */
+.case-study-card {
+  border-radius: 1rem;
+  transition: transform 0.3s;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  width: 1058px; /* Set the width as requested */
+  height: 769.4px; /* Set the height as requested */
+  margin: 0 auto; /* Center the card */
+}
+
+.case-study-card:hover {
+  transform: translateY(-4px);
+}
+
+.case-study-image-container {
+  position: relative;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  overflow: hidden; /* Ensure image is clipped to container */
+  height: 615px; /* Fixed height to match card design */
+  width: 100%; /* Full width of the container */
+}
+
+/* Fixed shadow effect */
+.case-study-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Match container size */
+  height: 100%;
+  border-radius: 12px;
+  z-index: -1; /* Place behind the container */
+
+  /* Soft glow effect without looking detached */
+  box-shadow: 0px 0px 0px rgba(216, 216, 216, 0.279),
+    0px 0px 90px -25px rgba(216, 216, 216, 0.289);
+
+  background: transparent;
+}
+
+.case-study-image {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevent image from overflowing */
+}
+.case-study-image img {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  max-height: 100%; /* Ensure image doesn't exceed container height */
+  object-fit: contain; /* Ensures entire image is visible and centered */
+  object-position: center; /* Center the image */
+}
+
+/* Black overlay */
+.case-study-image:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.37); /* 10% opacity black */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* On hover, hide the overlay */
+.case-study-card:hover .case-study-image::before {
+  opacity: 0;
+}
+
+.case-study-content {
+  padding: 1.5rem;
+}
+
+.read-time {
+  position: absolute;
+  top: 30px; /* Doubled the top spacing */
+  left: 30px; /* Doubled the left spacing */
+  background: rgba(61, 61, 61, 0.215); /* Semi-transparent background */
+  color: rgb(174, 174, 174); /* Default gray color */
+  font-size: 1.1rem; /* Doubled the font size */
+  padding: 10px 30px; /* Doubled the padding */
+  border-radius: 30px; /* Adjusted for proportional look */
+  font-weight: 100; /* Fixed incorrect font-weight value */
+  z-index: 2; /* Ensure it stays on top */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color */
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.6px; /* Slight increase for better readability */
+}
+
+/* When hovering over the card, change the text color to white */
+.case-study-card:hover .read-time {
+  color: rgb(235, 235, 235);
+}
+
+.case-study-title {
+  font-size: 1.7rem;
+  margin-top: -10px; /* Moves the title up */
+  margin-bottom: 0rem; /* Reduces space below */
+  font-weight: 300;
+  color: white; /* Title in white */
+}
+
+.case-study-description {
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  color: #bababaea; /* Description in #727272 */
+}
+
+.case-study-tag {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1.1rem;
+  color: rgb(189, 189, 189);
+}
+/* UI Design Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0; /* Remove horizontal gap */
+  row-gap: 0px; /* Keep vertical gap */
+  justify-content: center;
+  width: 100vw; /* Full viewport width */
+  max-width: 100%; /* Ensures it doesn't overflow */
+  margin: 0 auto; /* Center the grid */
+  box-sizing: border-box; /* Include padding in width calculation */
+  padding: 0 50px; /* Match the padding used in other sections */
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  align-self: start;
+}
+
+.grid-item img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* First & Last Grid Items */
+.grid-item:first-child,
+.grid-item:last-child {
+  width: 100%;
+  height: auto;
+}
+
+/* Middle Grid Item */
+.grid-item:nth-child(2) {
+  width: 100%;
+  height: auto;
+}
+
+/* Ensure each row is independent */
+.grid-container {
+  grid-auto-flow: dense;
+  grid-auto-rows: min-content;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Make sure UI design section has proper styling */
+#ui-design-section {
+  width: 100%; /* Changed from 100vw to 100% */
+  padding: 0;
+  margin-top: 100px;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+#ui-design-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 100px auto 0;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+#ui-design-section .grid-container {
+  display: grid;
+  padding: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px; /* Remove horizontal gap */
+  row-gap: 0px; /* Keep vertical gap */
+  width: 100%;
+  transform: none; /* Override any transform */
+  margin: 0;
+}
+
+#ui-design-section .grid-item {
+  width: 100%;
+  height: auto;
+  align-self: start;
+}
+
+#ui-design-section .grid-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.footer-text {
+  color: #767676;
+  font-size: 18px;
+}
+.social-links {
+  color: #767676;
+  font-size: 18px;
+}
+a {
+  color: inherit; /* or any color you prefer */
+  text-decoration: none; /* removes underline */
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 50px;
+  border-top: 1px solid #171717;
+  background-color: #171717;
+  align-items: center;
+}
+/* Existing CSS remains the same, with these additions at the end */
+
+/* Responsive Navbar and Hamburger Menu */
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 16px;
+    margin-left: 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger-menu {
+    background-color: #333;
+    border: none;
+    border-radius: 10px; /* دي اللي بتخلي الحدود كيرفد */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+    border-radius: 2px;
+  }
+
+  .mobile-nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #262626;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+
+  .mobile-nav a:last-child {
+    border-bottom: none;
+  }
+
+  .case-study-card {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .case-study-image-container {
+    height: 300px;
+  }
+
+  .case-study-image:before {
+    background: none;
+  }
+
+  .case-study-title {
+    font-size: 1.3rem;
+  }
+
+  .case-study-description {
+    font-size: 1rem;
+  }
+
+  /* Responsive Grid */
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+}
+
+/* Hamburger Menu Animations */
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .case-study-image-container {
+    height: 300px; /* Smaller height for mobile */
+  }
+}
+/* Existing CSS remains the same, with these modifications */
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    height: 10vh;
+    min-height: 500px;
+    padding: 100px 20px;
+    border-radius: 40px;
+  }
+
+  .hero-title {
+    position: absolute;
+    bottom: -40px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-section::before {
+    height: 100%; /* Full height of the section */
+    top: 0;
+    border-radius: 0; /* Remove border radius on mobile */
+  }
+
+  .hero-section h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    z-index: 10; /* Ensure text is above background */
+  }
+
+  .hero-info {
+    position: absolute;
+    top: 450px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .toggle-container {
+    width: calc(100% - 40px); /* Subtract padding */
+    margin: 20px auto; /* Center and add some vertical spacing */
+    position: relative;
+    z-index: 20; /* Ensure it's above other elements */
+  }
+
+  #portfolio-section {
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: -600px;
+  }
+
+  .case-study-card {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .case-study-image-container {
+    height: 300px;
+  }
+
+  .case-study-title {
+    font-size: 1.3rem;
+  }
+
+  .case-study-description {
+    font-size: 1rem;
+  }
+
+  #ui-design-section {
+    width: 100%; /* Changed from 100vw to 100% */
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  #ui-design-section {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 25px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}

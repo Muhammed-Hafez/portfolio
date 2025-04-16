@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Portfolio - Engy</title>
+    <link rel="icon" href="assets/butterfly2.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="logo">ENGY</div>
+        <div class="nav-links">
+          <a href="#Work">Work</a>
+          <a href="about.html">About</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+      <div class="mobile-nav">
+        <a href="#Work">Work</a>
+        <a href="about.html">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <h1>
+        ENGY IS A PRODUCT DESIGNER<br />
+        FOCUSED ON <br />
+        FUNCTIONALITY, AESTHETICS, AND IMPACT.
+      </h1>
+      <div class="hero-info">
+        <span>+2 YRS OF DESIGN EXPERIENCE</span>
+        <span>Based in Egypt</span>
+        <span>Creating With Purpose.</span>
+      </div>
+    </div>
+
+    <!-- Toggle Section -->
+    <div id="Work" class="toggle-container">
+      <div id="case-studies" class="toggle-btn active">Case Studies</div>
+      <div id="ui-design" class="toggle-btn">UI Design</div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio-section" class="case-studies">
+      <!-- Case Study 1 -->
+      <a href="case-study-1.html" style="text-decoration: none; color: inherit">
+        <div class="case-study-card">
+          <div class="case-study-image-container">
+            <div class="read-time">5 mins read</div>
+            <div class="case-study-image">
+              <img src="assets/MacBook13.png" alt="Case Study Preview" />
+            </div>
+          </div>
+          <div class="case-study-content">
+            <h3 class="case-study-title">
+              End-to-End Redesign of Isekai Code's Landing Page
+            </h3>
+            <p class="case-study-description">
+              The redesign significantly boosted business performance,
+              profitability, and engagement.
+            </p>
+            <span class="case-study-tag">Category</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Case Study 2 -->
+      <a href="case-study-2.html" style="text-decoration: none; color: inherit">
+        <div class="case-study-card">
+          <div class="case-study-image-container">
+            <div class="read-time">7 mins read</div>
+            <div class="case-study-image">
+              <img src="assets/desktop15.png" alt="Case Study Preview" />
+            </div>
+          </div>
+          <div class="case-study-content">
+            <h3 class="case-study-title">
+              Leading the Design of Learn2Earn SaaS Project
+            </h3>
+            <p class="case-study-description">
+              Redefining user engagement by designing an intuitive platform that
+              motivates learning and rewards achievement.
+            </p>
+            <span class="case-study-tag">Category</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Case Study 3 -->
+      <a href="case-study-3.html" style="text-decoration: none; color: inherit">
+        <div class="case-study-card">
+          <div class="case-study-image-container">
+            <div class="read-time">4 mins read</div>
+            <div class="case-study-image">
+              <img src="assets/Frame 3.png" alt="Case Study Preview" />
+            </div>
+          </div>
+          <div class="case-study-content">
+            <h3 class="case-study-title">
+              Supporting the Design of an Engaging IsekaiClinic SaaS Solution
+            </h3>
+            <p class="case-study-description">
+              Worked closely with a cross-functional team to craft intuitive
+              interfaces and improve user experiences.
+            </p>
+            <span class="case-study-tag">Category</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- UI Design Grid Section (Initially Hidden) -->
+    <section id="ui-design-section" class="ui-designs" style="display: none">
+      <div class="grid-container">
+        <div class="grid-item grid-item-1">
+          <img
+            src="assets/Desktop - 27 1.png"
+            alt="Restaurant menu UI design"
+          />
+        </div>
+
+        <div class="grid-item grid-item-3">
+          <img src="assets/gif-project-3.gif" alt="Beverage product page" />
+        </div>
+        <div class="grid-item grid-item-1">
+          <img src="assets/Dashboard 1.0.png" alt="Analytics dashboard UI" />
+        </div>
+        <div class="grid-item grid-item-2">
+          <img
+            src="assets/iPhone 15 Pro.png"
+            alt="Fashion e-commerce website"
+          />
+        </div>
+        <div class="grid-item grid-item-3">
+          <img src="assets/Desktop - 9.png" alt="Mobile app screens" />
+        </div>
+        <div class="grid-item grid-item-1">
+          <img src="assets/Nokia XR21.png" alt="Watch product page" />
+        </div>
+        <div class="grid-item grid-item-2">
+          <img
+            src="assets/customers 1.png"
+            alt="Customer management interface"
+          />
+        </div>
+        <div class="grid-item grid-item-3">
+          <img src="assets/Register.jpg" alt="Account creation form" />
+        </div>
+        <div class="grid-item grid-item-2">
+          <img
+            src="assets/gif-project2.gif"
+            alt="Construction company website"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-text">
+      <p>© 2025 Engy</p>
+      <div class="social-links">
+        <a href="#">Email</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
