@@ -76,8 +76,8 @@ body {
 }
 
 /* Animation base classes */
-/* .animate-on-scroll {
-  opacity: 0;
+.animate-on-scroll {
+  opacity: 1;
   transform: translateY(100px) scale(0.95);
   transition: opacity 1.2s ease-out, transform 1.2s ease-out;
   will-change: opacity, transform;
@@ -86,7 +86,7 @@ body {
 .animate-on-scroll.active {
   opacity: 1;
   transform: translateY(0) scale(1);
-} */
+}
 
 .stagger-delay-1 {
   transition-delay: 0.1s;
@@ -215,18 +215,11 @@ body {
 
 /* Updated problem-img styling for the scrolling effect */
 .problem-img {
+  width: 80%;
+  max-width: 1000px;
   margin: 80px auto;
   display: block;
   transition: width 0.5s ease-out;
-}
-
-/* First image should be full width when in view */
-.problem-img {
-  width: 80%;
-}
-
-.problem-img img {
-  width: 100%;
 }
 
 .content-section {
@@ -974,14 +967,14 @@ a {
     margin-left: -50px;
   }
 
-  .problem-img {
+  /* .problem-img {
     width: 80%;
   }
 
   .problem-img img {
     width: 100%;
     padding: 1rem;
-  }
+  } */
 
   .typography-section,
   .color-section {

@@ -400,7 +400,7 @@ body {
 #ui-design-section .grid-container {
   display: grid;
   padding: 0.5rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 10px; /* Remove horizontal gap */
   row-gap: 0px; /* Keep vertical gap */
   width: 100%;
