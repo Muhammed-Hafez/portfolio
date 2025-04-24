@@ -16,9 +16,13 @@ body {
   background: rgb(5, 5, 5);
   font-family: "Inter", sans-serif;
   color: white;
-  overflow-x: hidden;
-  height: 300vh; /* Make body taller to enable scrolling */
 }
+
+.content-section,
+.overview-container {
+  overflow: visible;
+}
+
 .logo {
   font-size: 18px;
   margin-left: 50px;
@@ -75,9 +79,13 @@ body {
   opacity: 1;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 /* Animation base classes */
 .animate-on-scroll {
-  opacity: 1;
+  opacity: 0;
   transform: translateY(100px) scale(0.95);
   transition: opacity 1.2s ease-out, transform 1.2s ease-out;
   will-change: opacity, transform;
@@ -186,17 +194,16 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 90px;
-  max-width: 700px;
   margin: 0 auto;
   padding: 0 50px;
   position: relative;
-  font-size: 15px;
+  font-size: 22px;
   line-height: 155%;
 }
 
 .overview-container {
   flex: 0.78;
-  margin-left: -150px;
+  margin: 15px auto;
 }
 
 .section {
@@ -215,16 +222,16 @@ body {
 
 /* Updated problem-img styling for the scrolling effect */
 .problem-img {
-  width: 80%;
+  width: 100%;
   max-width: 1000px;
-  margin: 80px auto;
+  margin: 20px auto;
   display: block;
   transition: width 0.5s ease-out;
 }
 
 .content-section {
   width: 100%;
-  margin-left: -30px;
+  padding: 1rem;
 }
 
 .page-nav {
@@ -608,7 +615,7 @@ a {
 
 /* Main Sections */
 .section {
-  margin: 40px auto;
+  margin: 15px auto;
   width: 100%;
   max-width: 1200px;
   padding: 0 20px;
@@ -832,8 +839,7 @@ a {
 .case-study-image img {
   max-width: 100%;
   height: auto;
-  overflow: hidden;
-  overflow-clip-margin: 0;
+  overflow-x: hidden;
 }
 
 .case-study-image::before {
@@ -963,10 +969,6 @@ a {
     width: 55%;
   }
 
-  .overview-container {
-    margin-left: -50px;
-  }
-
   /* .problem-img {
     width: 80%;
   }
@@ -1084,26 +1086,72 @@ a {
 /* Media query for small screens (577px - 768px) */
 @media (max-width: 768px) and (min-width: 577px) {
   .navbar-container {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .logo {
-    margin-left: 15px;
     font-size: 16px;
+    margin-left: 0;
   }
 
   .nav-links {
-    margin-right: 15px;
-    gap: 10px;
+    display: none;
   }
 
-  .nav-links a {
-    font-size: 0.85rem;
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .mobile-nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #262626;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .mobile-nav a:last-child {
+    border-bottom: none;
+  }
+  .hero-section {
+    padding: 3rem 2rem;
   }
 
   .case-study-hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 50px 15px;
+    gap: 30px;
   }
 
   .project-subtitle {
@@ -1127,7 +1175,6 @@ a {
   .project-image {
     width: 100%;
     margin-right: 0;
-    margin-top: 30px;
   }
 
   .project-details {
@@ -1167,10 +1214,6 @@ a {
     flex-wrap: wrap;
   }
 
-  .color-card {
-    flex: 0 0 calc(50% - 10px);
-  }
-
   .reason-card,
   .reason-card-2 {
     width: 100%;
@@ -1194,32 +1237,85 @@ a {
   .image-item {
     height: 300px;
   }
+
+  .section-title-2 {
+    margin-left: 0;
+  }
 }
 
 /* Media query for extra small screens (up to 576px) */
 @media (max-width: 576px) {
   .navbar-container {
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   .logo {
-    margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
+    margin-left: 0;
   }
 
   .nav-links {
-    margin-right: 10px;
-    gap: 5px;
+    display: none;
   }
 
-  .nav-links a {
-    font-size: 0.8rem;
-    margin-left: 10px;
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .mobile-nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #262626;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .mobile-nav a:last-child {
+    border-bottom: none;
+  }
+  .hero-section {
+    padding: 3rem 2rem;
+  }
+
+  .problem-img {
+    width: 100%;
   }
 
   .case-study-hero {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 40px 10px;
+    gap: 30px;
   }
 
   .project-subtitle {
@@ -1262,15 +1358,12 @@ a {
   }
 
   .color-card {
-    height: 50px;
-  }
-
-  .bg-img {
-    width: 50%;
+    height: 100px;
   }
 
   .overview-container {
     margin-left: 0;
+    font-size: 15px;
     flex: 1;
   }
 
@@ -1293,11 +1386,16 @@ a {
 
   .colors-container {
     flex-wrap: wrap;
-    background-color: rgba(56, 55, 55, 0.171);
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .color-hex {
+    font-size: 5px;
+    left: 2px;
   }
 
   .color-card {
-    flex: 0 0 100%;
     margin-bottom: 10px;
   }
 
@@ -1312,7 +1410,7 @@ a {
   }
 
   .case-study-card {
-    margin: 0 auto;
+    margin: 0;
     width: 100%;
     max-width: 300px;
     height: auto;

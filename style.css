@@ -495,7 +495,6 @@ footer {
   .mobile-nav a {
     color: white;
     padding: 10px 0;
-    text-align: center;
     border-bottom: 1px solid #333;
   }
 
@@ -554,8 +553,7 @@ footer {
 
 @media screen and (max-width: 768px) {
   .hero-section {
-    height: 10vh;
-    min-height: 500px;
+    height: 300px;
     padding: 100px 20px;
     border-radius: 40px;
   }
@@ -577,15 +575,18 @@ footer {
 
   .hero-section h1 {
     position: absolute;
-    top: 50%;
+    top: 65%;
+    left: 20px;
     transform: translateY(-50%);
-    font-size: 18px;
+    font-size: 16px;
     z-index: 10; /* Ensure text is above background */
   }
 
   .hero-info {
     position: absolute;
-    top: 450px;
+    top: 400px;
+    font-size: 10px;
+    left: 20px;
     display: flex;
     text-align: center;
     flex-direction: column;

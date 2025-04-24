@@ -6,7 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const problemImages = document.querySelectorAll(".problem-img");
   const heroSection = document.querySelector(".case-study-hero");
   const onThisPageContainer = document.querySelector(".on-this-page-container");
+  // Add click event to all add buttons
 
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const mobileNav = document.querySelector(".mobile-nav");
+
+  hamburgerMenu.addEventListener("click", () => {
+    hamburgerMenu.classList.toggle("active");
+    mobileNav.style.display = hamburgerMenu.classList.contains("active")
+      ? "flex"
+      : "none";
+  });
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll(".mobile-nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburgerMenu.classList.remove("active");
+      mobileNav.style.display = "none";
+    });
+  });
+  const addButtons = document.querySelectorAll(".add-button");
   // Make hero section elements visible immediately without animation
   document
     .querySelectorAll(".case-study-hero .animate-on-scroll")
@@ -23,19 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function checkInView() {
     const windowHeight = window.innerHeight;
     const scrollY = window.scrollY;
-
-    // For each problem image (except the first one which is always 100%)
-    problemImages.forEach((img, index) => {
-      if (index > 0) {
-        // Skip the first image
-        const rect = img.getBoundingClientRect();
-        const visiblePercentage = getVisiblePercentage(img);
-
-        // Scale from 80% to 100% based on visibility
-        const scaleFactor = 0.8 + visiblePercentage * 0.2;
-        img.style.width = `${scaleFactor * 100}%`;
-      }
-    });
 
     // Animate elements as they enter viewport (excluding hero section)
     animateElements.forEach((element) => {

@@ -7,6 +7,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const heroSection = document.querySelector(".case-study-hero");
   const onThisPageContainer = document.querySelector(".on-this-page-container");
 
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const mobileNav = document.querySelector(".mobile-nav");
+
+  hamburgerMenu.addEventListener("click", () => {
+    hamburgerMenu.classList.toggle("active");
+    mobileNav.style.display = hamburgerMenu.classList.contains("active")
+      ? "flex"
+      : "none";
+  });
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll(".mobile-nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburgerMenu.classList.remove("active");
+      mobileNav.style.display = "none";
+    });
+  });
+
   // Make hero section elements visible immediately without animation
   document
     .querySelectorAll(".case-study-hero .animate-on-scroll")

@@ -17,7 +17,6 @@ body {
   font-family: "Inter", sans-serif;
   color: white;
   overflow-x: hidden;
-  height: 300vh; /* Make body taller to enable scrolling */
 }
 .logo {
   font-size: 18px;
@@ -75,8 +74,12 @@ body {
   opacity: 1;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 /* Animation base classes */
-/* .animate-on-scroll {
+.animate-on-scroll {
   opacity: 0;
   transform: translateY(100px) scale(0.95);
   transition: opacity 1.2s ease-out, transform 1.2s ease-out;
@@ -86,7 +89,7 @@ body {
 .animate-on-scroll.active {
   opacity: 1;
   transform: translateY(0) scale(1);
-} */
+}
 
 .stagger-delay-1 {
   transition-delay: 0.1s;
@@ -186,17 +189,16 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 90px;
-  max-width: 700px;
   margin: 0 auto;
   padding: 0 50px;
   position: relative;
-  font-size: 15px;
+  font-size: 22px;
   line-height: 155%;
 }
 
 .overview-container {
   flex: 0.78;
-  margin-left: -150px;
+  margin: 0 auto;
 }
 
 .section {
@@ -215,14 +217,15 @@ body {
 
 /* Updated problem-img styling for the scrolling effect */
 .problem-img {
-  margin: 80px auto;
+  margin: 30px auto;
   display: block;
   transition: width 0.5s ease-out;
 }
 
 /* First image should be full width when in view */
 .problem-img {
-  width: 80%;
+  width: 60%;
+  padding: 1rem;
 }
 
 .problem-img img {
@@ -231,7 +234,6 @@ body {
 
 .content-section {
   width: 100%;
-  margin-left: -30px;
 }
 
 .page-nav {
@@ -641,7 +643,7 @@ a {
 
 /* Main Sections */
 .section {
-  margin: 40px auto;
+  margin: 10px auto;
   width: 100%;
   max-width: 1200px;
   padding: 0 20px;
@@ -708,7 +710,7 @@ a {
 .content-item {
   width: 100%;
   height: 1000px;
-  background: url("assets/Desktop\ -\ 15.png") no-repeat center top;
+  background: url("assets/Desktop\ -\ 31.png") no-repeat center top;
   background-position: center top;
   background-size: 100% auto; /* Change to contain or cover instead of 100% 100% */
   background-repeat: no-repeat;
@@ -996,10 +998,6 @@ a {
     width: 55%;
   }
 
-  .overview-container {
-    margin-left: -50px;
-  }
-
   .problem-img {
     width: 80%;
   }
@@ -1117,30 +1115,73 @@ a {
 /* Media query for small screens (577px - 768px) */
 @media (max-width: 768px) and (min-width: 577px) {
   .navbar-container {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .logo {
-    margin-left: 15px;
     font-size: 16px;
+    margin-left: 0;
   }
 
   .nav-links {
-    margin-right: 15px;
-    gap: 10px;
+    display: none;
   }
 
-  .nav-links a {
-    font-size: 0.85rem;
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .mobile-nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #262626;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .mobile-nav a:last-child {
+    border-bottom: none;
   }
 
   .case-study-hero {
-    flex-direction: column;
-    padding: 50px 15px;
+    flex-direction: column-reverse;
+    padding: 10px 15px;
   }
 
   .project-subtitle {
     font-size: 22px;
+    padding-top: 1rem;
   }
 
   .project-title {
@@ -1196,12 +1237,20 @@ a {
     padding: 0.5rem;
   }
 
-  .colors-container {
-    flex-wrap: wrap;
+  .container-3 {
+    margin: auto;
   }
 
-  .color-card {
-    flex: 0 0 calc(50% - 10px);
+  .card {
+    max-width: 100%;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .colors-container {
+    flex-wrap: wrap;
   }
 
   .reason-card,
@@ -1232,30 +1281,72 @@ a {
 /* Media query for extra small screens (up to 576px) */
 @media (max-width: 576px) {
   .navbar-container {
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   .logo {
-    margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
+    margin-left: 0;
   }
 
   .nav-links {
-    margin-right: 10px;
-    gap: 5px;
+    display: none;
   }
 
-  .nav-links a {
-    font-size: 0.8rem;
-    margin-left: 10px;
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .mobile-nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #262626;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .mobile-nav a {
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .mobile-nav a:last-child {
+    border-bottom: none;
   }
 
   .case-study-hero {
-    flex-direction: column;
-    padding: 40px 10px;
+    flex-direction: column-reverse;
+    padding: 10px 10px;
   }
 
   .project-subtitle {
+    padding-top: 1rem;
     font-size: 18px;
   }
 
@@ -1294,6 +1385,10 @@ a {
     padding: 0 10px;
   }
 
+  .problem-img {
+    width: 100%;
+  }
+
   .container-3 {
     margin: auto;
     text-align: center;
@@ -1305,16 +1400,19 @@ a {
   }
 
   .color-card {
-    height: 50px;
+    height: 100px;
+    margin-bottom: 10px;
   }
 
-  .bg-img {
-    width: 50%;
+  .color-hex {
+    font-size: 6px;
+    left: 2px;
   }
 
   .overview-container {
     margin-left: 0;
     flex: 1;
+    font-size: 15px;
   }
 
   .section {
@@ -1336,12 +1434,8 @@ a {
 
   .colors-container {
     flex-wrap: wrap;
-    background-color: rgba(56, 55, 55, 0.171);
-  }
-
-  .color-card {
-    flex: 0 0 100%;
-    margin-bottom: 10px;
+    justify-content: space-evenly;
+    gap: 0;
   }
 
   .reason-card,
@@ -1355,7 +1449,7 @@ a {
   }
 
   .case-study-card {
-    margin: 0 auto;
+    margin: 0;
     width: 100%;
     max-width: 300px;
     height: auto;
@@ -1411,7 +1505,7 @@ a {
   }
 
   .section-title-2 {
-    margin-left: 140px;
+    margin-left: 10px;
   }
 
   .frame-container {
