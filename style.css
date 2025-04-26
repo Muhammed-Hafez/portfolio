@@ -13,7 +13,6 @@ body {
 }
 .logo {
   font-size: 18px;
-  margin-left: 50px; /* Ensures the logo is aligned with the left edge */
 }
 
 /* Navbar */
