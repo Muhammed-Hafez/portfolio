@@ -98,12 +98,7 @@ a {
   align-items: center;
   padding: 0 1rem;
   margin: 0 auto;
-  line-height: 35px;
   margin-bottom: 50px;
-}
-
-.hero-content span {
-  line-height: 35px;
 }
 
 .icon-greet {
@@ -122,9 +117,9 @@ a {
   position: relative;
   z-index: 2;
   font-family: "Inter", sans-serif;
-  font-size: 28px;
+  font-size: 40px;
   top: 100px;
-  margin-left: 150px;
+  margin-left: 50px;
 }
 
 .hero-visuals {
@@ -138,7 +133,7 @@ a {
 
 .stroke-image {
   height: 100%;
-  width: 60%;
+  width: 50%;
   margin-top: 100px;
   object-fit: contain;
   position: relative;
@@ -464,19 +459,19 @@ footer {
 @media (max-width: 1024px) {
   .hero-section {
     height: auto;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
 
   .stroke-image {
-    width: 100%;
+    width: 50%;
     right: 0;
   }
 
   .hero-content {
     width: 100%;
     margin-left: 0;
-    top: 0;
-    font-size: 20px;
+    top: 20px;
+    font-size: 30px;
   }
 
   .description {
@@ -548,6 +543,10 @@ footer {
   }
   .hero-section {
     padding: 3rem 2rem;
+  }
+
+  .hero-content {
+    font-size: 20px;
   }
 
   .description {
