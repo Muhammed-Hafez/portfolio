@@ -121,8 +121,10 @@ a {
   z-index: 2;
   font-family: "Inter", sans-serif;
   font-size: 28px;
-  font-weight: lighter;
   top: 100px;
+}
+.hero-content span {
+  font-weight: 100;
 }
 
 .hero-visuals {
