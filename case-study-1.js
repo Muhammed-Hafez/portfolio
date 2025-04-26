@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Using an image to ensure correct loading and dimensions
   const img = new Image();
-  img.src = "assets/Desktop - 32.png";
+  img.src = "assets/Desktop - 30.png";
 
   img.onload = function () {
     // Get natural dimensions of the image

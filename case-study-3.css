@@ -1372,6 +1372,11 @@ a {
 
   .problem-img {
     width: 100%;
+    display: none;
+  }
+
+  .mobile-problem {
+    display: block;
   }
 
   .container-3 {
