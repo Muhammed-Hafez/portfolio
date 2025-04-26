@@ -662,4 +662,12 @@ footer {
     font-weight: 800;
     font-size: 12px;
   }
+
+  footer {
+    padding: 8px 10px;
+  }
+
+  footer p {
+    margin: 0;
+  }
 }

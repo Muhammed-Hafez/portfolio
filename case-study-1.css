@@ -1501,4 +1501,8 @@ a {
   .image-scroll-section {
     display: none;
   }
+
+  .footer {
+    padding: 8px 10px;
+  }
 }
