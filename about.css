@@ -97,10 +97,9 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  max-width: 1200px;
   margin: 0 auto;
   line-height: 35px;
-  margin-bottom: 256px;
+  margin-bottom: 50px;
 }
 
 .hero-content span {
@@ -125,6 +124,7 @@ a {
   font-family: "Inter", sans-serif;
   font-size: 28px;
   top: 100px;
+  margin-left: 150px;
 }
 
 .hero-visuals {
@@ -133,7 +133,7 @@ a {
   justify-content: center;
   align-items: center;
   overflow: visible; /* Allows the image to overflow */
-  margin-top: 200px;
+  margin-top: 50px;
 }
 
 .stroke-image {
