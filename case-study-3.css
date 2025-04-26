@@ -1521,4 +1521,8 @@ a {
   .contact-btn {
     padding: 8px 16px;
   }
+
+  .image-scroll-section {
+    display: none;
+  }
 }

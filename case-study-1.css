@@ -1393,6 +1393,11 @@ a {
     margin: 30px auto;
   }
 
+  .why-section {
+    width: 100%;
+    padding-right: 10px;
+  }
+
   .section-typo3 {
     width: 60%;
     margin-left: 30px;
@@ -1491,5 +1496,9 @@ a {
 
   .contact-btn {
     padding: 8px 16px;
+  }
+
+  .image-scroll-section {
+    display: none;
   }
 }

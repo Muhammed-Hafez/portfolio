@@ -120,10 +120,9 @@ a {
   position: relative;
   z-index: 2;
   font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 32px;
+  font-size: 28px;
+  font-weight: lighter;
   top: 100px;
-  line-height: 25px;
 }
 
 .hero-visuals {
