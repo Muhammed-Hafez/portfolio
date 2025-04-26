@@ -206,6 +206,8 @@ a {
   font-size: 1.8rem;
   margin-bottom: 2rem;
   font-weight: 400;
+  margin-left: 0;
+  padding: 0;
 }
 
 .about-subsection {
